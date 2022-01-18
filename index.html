@@ -1,30 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Javascript Quiz</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coding Quiz</title>
     <link rel="stylesheet" href="./assets/css/style.css" />
-</head>
-<body>
-<h4>High Score</h4>
-<div class="quiz" id="quiz">
-<h1>Javascript Quiz</h1>
-<div class="question-container" id="question">Questions.</div>
-<div class="option-container">
-    <button class="option" onclick="" id="op1" >option1</button>
+  </head>
+  <body>
+    <h4>High Score</h4>
 
-    <button class="option" id="op2" >option2</button>
+    <div class="quiz" id="quiz">
+      <h1>Coding Quiz</h1>
+      <div class="hide" id="question-container">Question</div>
+      <div class="option-container">
+        <button class="option" onclick="" id="options">Option 1</button>
+        <button class="option" onclick="" id="options">Option 2</button>
+        <button class="option" onclick="" id="options">Option 3</button>
+        <button class="option" onclick="" id="options">Option 4</button>
+      </div>
+      <button id="start-btn">Start Quiz</button>
+    </div>
 
-    <button class="option" id="op3">option3</button>
+    <div id="timer"><h4>Timer</h4></div>
 
-    <button class="option" id="op4">option4</button>
-</div>
-<button id="start-btn">Start Quiz</button>
-</div>
-<div id="timer"><h4>Timer</h4></div>
-<div id="results"></div>
-<script src="assets/js/script.js"></script>   
-</body>
+    <div id="results"></div>
+
+    <script src="assets/js/script.js"></script>
+  </body>
 </html>

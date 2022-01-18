@@ -4,5 +4,13 @@
 }
 
 body {
-    color: blue
+    color: rgb(10, 110, 104);
+}
+
+#start-btn {
+    font-size: 30px;
+    background-color: rgb(10, 110, 104);
+     border-color: white;
+     color: white;
+     bottom: 20%;
 }
