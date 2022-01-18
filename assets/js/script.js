@@ -1,3 +1,4 @@
+var generateBtn = document.querySelector("#generate");
 const myQuestions = [
     {
       question: "What does Javascript mainly do?",
@@ -50,3 +51,10 @@ const myQuestions = [
     correctAnswer: "d"
     }
   ];
+//   HTML tips:
+//   So for this project we will be able to dynamically update the html with questions and answers from our myQuestions variable. But we are going to need to hard code some elements so we can target them. So far you currently have a start button with an id ‘start-btn’ which is great for starting the quiz. You also have a a div witht he id ‘results’ which can be used at the end to show the users results. But in between there we should consider adding
+//   • a div for questions
+//      ◦ which then had an element for the question-title
+//      ◦ and an element for the choices
+//      ◦ This will allow you to dynamically update the html and append new elements to these hardcoded elements
+//   • You can consider adding a section/div in your htlm for the end screen as well.
