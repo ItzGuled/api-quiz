@@ -4,13 +4,22 @@
 }
 
 body {
-    color: rgb(10, 110, 104);
+    color: rgb(255, 255, 255);
+    font-family:'Trebuchet MS', sans-serif;
+    background: linear-gradient(100deg, #e7b00b 30%, #ecd608 80%);
 }
 
 #start-btn {
-    font-size: 30px;
-    background-color: rgb(10, 110, 104);
+    font-size: 23px;
+    background-color: rgb(209, 223, 223);
      border-color: white;
      color: white;
      bottom: 20%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
 }
+
+.hide {
+    display: none;
+  }
