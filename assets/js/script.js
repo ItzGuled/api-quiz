@@ -1,81 +1,62 @@
-const startButton = document.getElementById('start-btn')
-const questionContainerElement = document.getElementById('question-container')
-const questionElement = document.getElementById('question')
+var startButton = document.getElementById("start-btn");
+var questionContainerElement = document.getElementById("question-container");
+var questionElement = document.getElementById("question");
+var quesionContainerEl = document.getElementById("question-container");
+var hello = document.getElementById("intro");
+var answerEl = document.getElementById("answer-click");
+startButton.addEventListener("click", startQuiz);
 
-startButton.addEventListener('click', startQuiz)
 
-const myQuestions = [
+
+function startQuiz() {
+  startButton.classList.add("hide");
+  quesionContainerEl.classList.remove("hide");
+}
+
+function question() {
+  document.getElementById("answer-click").innerHTML = "";
+
+}
+
+  var questions = [
     {
       question: "What does Javascript mainly do?",
-      answers: {
-        a: "Adds color to a website",
-        b: "Makes a website interactive",
-        c: "Displays hard text on screen",
-        d: "Makes website faster."
-      },
-      correctAnswer: "b"
+      answers: [
+        "Adds color to a website",
+        "Makes a website interactive",
+        "Displays hard text on screen",
+        "Makes website faster.",
+      ],
+      correctAnswer: "Makes a website interactive",
     },
     {
       question: "What is the most popular software to use for coding?",
-      answers: {
-        a: "notepad",
-        b: "VScode",
-        c: "vim",
-        d: "Google"
-      },
-      correctAnswer: "b"
+      answers: ["notepad", "VScode", "vim", "Google"],
+      correctAnswer: "VScode",
     },
     {
       question: "What tool uploads your website live?",
-      answers: {
-        a: "Git Pages",
-        b: "Git Lab",
-        c: "Google Pages",
-        d: "Git Repository"
-      },
-      correctAnswer: "a"
+      answers: ["Git Pages", "Git Lab", "Google Pages", "Git Repository"],
+      correctAnswer: "Git Pages",
     },
     {
-    question: "What is the definition of CSS?",
-    answers: {
-      a: "Cascading Space Sheet",
-      b: "Color style Sheet.",
-      c: "Cascading Style Sheets",
-      d: "Coding Style Sheet"
+      question: "What is the definition of CSS?",
+      answers: [
+        "Cascading Space Sheet",
+        "Color style Sheet.",
+        "Cascading Style Sheets",
+        "Coding Style Sheet",
+      ],
+      correctAnswer: "Cascading Style Sheets",
     },
-    correctAnswer: "c"
-  },
-  {
-    question: "Which tool can help push IDE work to Github?",
-    answers: {
-      a: "Git Lab",
-      b: "Javascript",
-      c: "Google Docs",
-      d: "Git Bash"
+    {
+      question: "Which tool can help push IDE work to Github?",
+      answers: ["Git Lab", "Javascript", "Google Docs", "Git Bash"],
+      correctAnswer: "Git Bash",
     },
-    correctAnswer: "d"
-    }
   ];
 
-  function startQuiz() {
-    console.log('start')
-    startButton.classList.add('hide')
-    questionContainerElement.classList.remove('hide')
-   
-  }
-  function questions(){
-
-  }
-  function wrong() {
-
-  }
-  function ending() {
-
-  }
-  function timer() {
-
-  }
-  function score() {
-
-  }
-
+function wrong() {}
+function ending() {}
+function timer() {}
+function score() {}
