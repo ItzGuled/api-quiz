@@ -1,16 +1,18 @@
 var startButton = document.getElementById("start-btn");
 var questionContainerElement = document.getElementById("question-container");
 var questionElement = document.getElementById("question");
-var quesionContainerEl = document.getElementById("question-container");
+var questionContainerEl = document.getElementById("question-container");
 var hello = document.getElementById("intro");
 var answerEl = document.getElementById("answer-click");
+
 startButton.addEventListener("click", startQuiz);
 
 
 
 function startQuiz() {
   startButton.classList.add("hide");
-  quesionContainerEl.classList.remove("hide");
+  questionContainerEl.classList.remove("hide");
+  intro.classList.add("hide");
 }
 
 function question() {
