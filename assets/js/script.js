@@ -1,23 +1,16 @@
-var startButton = document.getElementById("start-btn");
 var questionContainerElement = document.getElementById("question-container");
 var questionElement = document.getElementById("question");
 var questionContainerEl = document.getElementById("question-container");
 var hello = document.getElementById("intro");
 var answerEl = document.getElementById("answer-click");
+var startButton = document.getElementById("start-btn");
 
 startButton.addEventListener("click", startQuiz);
-
-
 
 function startQuiz() {
   startButton.classList.add("hide");
   questionContainerEl.classList.remove("hide");
   intro.classList.add("hide");
-}
-
-function question() {
-  document.getElementById("answer-click").innerHTML = "";
-
 }
 
   var questions = [
@@ -57,6 +50,12 @@ function question() {
       correctAnswer: "Git Bash",
     },
   ];
+
+  function question() {
+    question.innerText = questions[currentQuestionIndex].title;
+   ;
+ 
+ }
 
 function wrong() {}
 function ending() {}
