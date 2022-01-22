@@ -11,38 +11,47 @@ function startQuiz() {
   startButton.classList.add("hide");
   questionContainerEl.classList.remove("hide");
   intro.classList.add("hide");
+  displayQuestion();
 }
 
   var questions = [
     {
-      question: "What does Javascript mainly do?",
+      question: "What is the movie Heath Ledger won an Oscar for?",
       answers: [
-        "Adds color to a website",
-        "Makes a website interactive",
-        "Displays hard text on screen",
-        "Makes website faster.",
+        "BrokeBack Mountain",
+        "The Dark Knight",
+        "The Patriot",
+        "Candy",
       ],
-      correctAnswer: "Makes a website interactive",
+      correctAnswer: "The Dark Knight",
     },
     {
-      question: "What is the most popular software to use for coding?",
-      answers: ["notepad", "VScode", "vim", "Google"],
-      correctAnswer: "VScode",
-    },
-    {
-      question: "What tool uploads your website live?",
-      answers: ["Git Pages", "Git Lab", "Google Pages", "Git Repository"],
-      correctAnswer: "Git Pages",
-    },
-    {
-      question: "What is the definition of CSS?",
+      question: "Who directed Django Unchained?",
       answers: [
-        "Cascading Space Sheet",
-        "Color style Sheet.",
-        "Cascading Style Sheets",
-        "Coding Style Sheet",
+      "Martin Scorsese", 
+      "Steve Spielberg", 
+      "George Lucas", 
+      "Quentin Tarantino"],
+      correctAnswer: "Quentin Tarantino",
+    },
+    {
+      question: "How much Oscars does Robert Deniro have?",
+      answers: [
+      "1", 
+      "2", 
+      "3", 
+      "4"],
+      correctAnswer: "4",
+    },
+    {
+      question: "Who is the Darth Vaders master?",
+      answers: [
+        "Grevious",
+        "Yoda.",
+        "Palpatine",
+        "Obi Wan",
       ],
-      correctAnswer: "Cascading Style Sheets",
+      correctAnswer: "Palpatine",
     },
     {
       question: "Which tool can help push IDE work to Github?",
@@ -51,9 +60,10 @@ function startQuiz() {
     },
   ];
 
-  function question() {
-    question.innerText = questions[currentQuestionIndex].title;
-   ;
+  function displayQuestion() {
+
+ document.getElementById("question").textContent = questions[0].question;
+ document.getElementById("answer-click").textContent = questions[0].answers;
  
  }
 
