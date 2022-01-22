@@ -4,6 +4,7 @@ var questionContainerEl = document.getElementById("question-container");
 var hello = document.getElementById("intro");
 var answerEl = document.getElementById("answer-click");
 var startButton = document.getElementById("start-btn");
+var indexQuestion = 0
 
 startButton.addEventListener("click", startQuiz);
 
@@ -64,12 +65,16 @@ function startQuiz() {
     },
   ];
 
+
+  
+
   function displayQuestion() {
 // turn number 81 to determine turn is gonna be
  
  var answerClick=document.getElementById("answer-click");
  var question=document.getElementById("question");
 
+ 
  
  while (answerClick.hasChildNodes()){
   answerClick.removeChild(answerClick.firstChild)
@@ -85,9 +90,19 @@ function startQuiz() {
   i++
  }
  question.textContent= questions[0].question;
- 
- 
 }
+//  document.getElementById("ol").addEventListener("click", indexQuestion);
+
+//  questions[indexQuestion].question; 
+// }
+
+// function evaluateAndIncrement(event) {
+//   event.preventDefault() 
+//    // eventually code in here will evaluate answers as well
+//    myIndex++
+//     displayQuestion();
+// }
+
 
 function wrong() {}
 function ending() {}
