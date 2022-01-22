@@ -12,6 +12,7 @@ function startQuiz() {
   questionContainerEl.classList.remove("hide");
   intro.classList.add("hide");
   displayQuestion();
+  displayQuestion();
 }
 
   var questions = [
@@ -54,18 +55,39 @@ function startQuiz() {
       correctAnswer: "Palpatine",
     },
     {
-      question: "Which tool can help push IDE work to Github?",
-      answers: ["Git Lab", "Javascript", "Google Docs", "Git Bash"],
-      correctAnswer: "Git Bash",
+      question: "Which Star Wars Movie is the best(This is not subjective)?",
+      answers: ["Empire Strikes Back", 
+      "Revenge of th Sith", 
+      "Rise of Skywalker", 
+      "New Hope"],
+      correctAnswer: "Empire Strikes Back",
     },
   ];
 
   function displayQuestion() {
-
- document.getElementById("question").textContent = questions[0].question;
- document.getElementById("answer-click").textContent = questions[0].answers;
+// turn number 81 to determine turn is gonna be
  
+ var answerClick=document.getElementById("answer-click");
+ var question=document.getElementById("question");
+
+ 
+ while (answerClick.hasChildNodes()){
+  answerClick.removeChild(answerClick.firstChild)
+}
+
+
+ var i=0
+ while(i < 4){
+  var listElement=document.createElement("li");
+  listElement.textContent=questions[0].answers[i];
+  answerClick.appendChild (listElement);
+  
+  i++
  }
+ question.textContent= questions[0].question;
+ 
+ 
+}
 
 function wrong() {}
 function ending() {}
