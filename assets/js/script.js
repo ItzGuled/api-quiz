@@ -83,26 +83,25 @@ function startQuiz() {
 
  var i=0
  while(i < 4){
-  var listElement=document.createElement("li");
-  listElement.textContent=questions[0].answers[i];
+  var listElement = document.createElement("li");
+  listElement.textContent=questions[indexQuestion].answers[i];
+  listElement.onclick=evaluateAndIncrement
   answerClick.appendChild (listElement);
   
   i++
  }
- question.textContent= questions[0].question;
+ question.textContent = questions[indexQuestion].question;
+ 
 }
-//  document.getElementById("ol").addEventListener("click", indexQuestion);
 
-//  questions[indexQuestion].question; 
-// }
-
-// function evaluateAndIncrement(event) {
-//   event.preventDefault() 
-//    // eventually code in here will evaluate answers as well
-//    myIndex++
-//     displayQuestion();
-// }
-
+function evaluateAndIncrement(event) {
+  event.preventDefault() 
+   // eventually code in here will evaluate answers as well
+   //event.target
+   indexQuestion++
+    displayQuestion();
+}
+//event.target
 
 function wrong() {}
 function ending() {}

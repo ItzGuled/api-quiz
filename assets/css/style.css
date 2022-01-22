@@ -6,7 +6,7 @@
 body {
     color: rgb(255, 255, 255);
     font-family:'Trebuchet MS', sans-serif;
-    background: linear-gradient(100deg, #e7b00b 30%, #ecd608 80%);
+    background: linear-gradient(100deg, #4d0be7 30%, #0832ec 80%);
 }
 
 #start-btn {
@@ -22,4 +22,7 @@ body {
 
 .hide {
     display: none;
+    visibility: hidden;
+    
   }
+
