@@ -6,7 +6,7 @@ var answerEl = document.getElementById("answer-click");
 var startButton = document.getElementById("start-btn");
 var indexQuestion = 0;
 var score = 0;
-var timing = 0;
+var timing = 75;
 var clear = undefined;
 var clickEl = document.getElementById("click");
 
@@ -63,6 +63,8 @@ var questions = [
 function displayQuestion() {
   if (indexQuestion >= questions.length) {
     ending();
+
+    
   } else {
     var answerClick = document.getElementById("answer-click");
     var question = document.getElementById("question");
@@ -81,6 +83,8 @@ function displayQuestion() {
       i++;
     }
     question.textContent = questions[indexQuestion].question;
+
+    
   }
 }
 
@@ -91,11 +95,15 @@ function evaluateAndIncrement(event) {
     console.log("answered-correctly");
     score++;
 
+
+
+    
     clickEl.textContent = "CORRECT!";
     console.log("answered-correctly");
   } else {
     clickEl.textContent = "WRONG!";
     console.log("answered-incorrectly");
+    timing = timing - 10;
   }
 
   clickEl.setAttribute("class", "click");
@@ -105,6 +113,8 @@ function evaluateAndIncrement(event) {
   }, 1500);
   //adding fade out effect css
 
+
+  
   indexQuestion++;
   displayQuestion();
 }
