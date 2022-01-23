@@ -1,13 +1,15 @@
 var questionElement = document.getElementById("question");
 var questionContainerEl = document.getElementById("question-container");
 var hello = document.getElementById("intro");
-var results =document.getElementById("results")
+var results = document.getElementById("results");
 var answerEl = document.getElementById("answer-click");
 var startButton = document.getElementById("start-btn");
 var indexQuestion = 0;
 var score = 0;
 var timing = 0;
-var clear = undefined
+var clear = undefined;
+var clickEl = document.getElementById("click");
+
 startButton.addEventListener("click", startQuiz);
 
 function startQuiz() {
@@ -43,7 +45,7 @@ var questions = [
   },
   {
     question: "Who is the Darth Vaders master?",
-    answers: ["General Grievous", "Yoda.", "Palpatine", "Obi Wan"],
+    answers: ["General Grievous", "Yoda", "Palpatine", "Obi Wan"],
     correctAnswer: "Palpatine",
   },
   {
@@ -86,8 +88,23 @@ function evaluateAndIncrement(event) {
   event.preventDefault();
 
   if (questions[indexQuestion].correctAnswer === event.target.innerHTML) {
+    console.log("answered-correctly");
     score++;
+
+    clickEl.textContent = "CORRECT!";
+    console.log("answered-correctly");
+  } else {
+    clickEl.textContent = "WRONG!";
+    console.log("answered-incorrectly");
   }
+
+  clickEl.setAttribute("class", "click");
+
+  setTimeout(function () {
+    clickEl.setAttribute("class", "click hide");
+  }, 1500);
+  //adding fade out effect css
+
   indexQuestion++;
   displayQuestion();
 }
@@ -95,19 +112,17 @@ function evaluateAndIncrement(event) {
 function ending() {
   questionContainerEl.classList.add("hide");
   results.classList.remove("hide");
-
 }
 function timer() {
-  let timerElement = document.querySelector("#timer > span")
-  let timerValue = timerElement.textContent
-  timing = parseInt(timerValue)
-  console.log("timer element", timerValue)
-  clear = setInterval(function() {
-  if (timing < 0){
-  clearInterval(refreshIntervalId);
-  }
-  document.querySelector("#timer > span").textContent = timing--
-
-  },1000)
+  let timerElement = document.querySelector("#timer > span");
+  let timerValue = timerElement.textContent;
+  timing = parseInt(timerValue);
+  console.log("timer element", timerValue);
+  clear = setInterval(function () {
+    if (timing < 0) {
+      clearInterval(refreshIntervalId);
+    }
+    document.querySelector("#timer > span").textContent = timing--;
+  }, 1000);
 }
 function score() {}
