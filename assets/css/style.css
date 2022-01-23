@@ -1,56 +1,47 @@
 .quiz {
-    max-width: max-content;
-    margin: auto;
+  max-width: max-content;
+  margin: auto;
 }
 
 body {
-    color: rgb(255, 255, 255);
-    font-family:'Trebuchet MS', sans-serif;
-    background: linear-gradient(100deg, #4d0be7 30%, #0832ec 80%);
-   
-
-  
+  color: rgb(255, 255, 255);
+  font-family: "Trebuchet MS", sans-serif;
+  background: linear-gradient(100deg, #4d0be7 30%, #0832ec 80%);
 }
 
 #start-btn {
-    font-size: 23px;
-    background-color: rgb(209, 223, 223);
-     border-color: white;
-     color: #0832ec;
-     bottom: 20%;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     margin: 0 auto;
-    display: block;
+  font-size: 23px;
+  background-color: rgb(209, 223, 223);
+  border-color: white;
+  color: #0832ec;
+  bottom: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  display: block;
 }
 
 .hide {
-    display: none;
-    visibility: hidden;
-    
-  }
-
-  #question-container {
-    
-    text-align: center;
-    list-style-position: inside;
-  }
-
-  #quiz h1 {
-    
-    text-align: center;
-  }
-  li:hover {
-    color: rgb(29, 11, 58);
+  display: none;
+  visibility: hidden;
 }
-  ol {
-    list-style-type: none;
-    
-  }
 
-  #click {
-    
-    text-align: center;
-  }
- 
+#question-container {
+  text-align: center;
+  list-style-position: inside;
+}
+
+#quiz h1 {
+  text-align: center;
+}
+li:hover {
+  color: rgb(29, 11, 58);
+}
+ol {
+  list-style-type: none;
+}
+
+#click {
+  text-align: center;
+}
