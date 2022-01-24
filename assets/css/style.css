@@ -45,3 +45,8 @@ ol {
 #click {
   text-align: center;
 }
+
+#results {
+    text-align: center;
+    overflow: hidden;
+  }
