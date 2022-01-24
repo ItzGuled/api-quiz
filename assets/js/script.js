@@ -96,8 +96,6 @@ function evaluateAndIncrement(event) {
     score++;
 
 
-
-    
     clickEl.textContent = "CORRECT!";
     console.log("answered-correctly");
   } else {
@@ -118,10 +116,14 @@ function evaluateAndIncrement(event) {
   indexQuestion++;
   displayQuestion();
 }
-
+let timeEnding = false
 function ending() {
   questionContainerEl.classList.add("hide");
+  timeEnding = true
   results.classList.remove("hide");
+  var scoreTotal = document.createElement("p");
+  scoreTotal.textContent = document.querySelector("#timer > span").textContent
+  results.appendChild(scoreTotal);
 }
 function timer() {
   let timerElement = document.querySelector("#timer > span");
@@ -132,6 +134,9 @@ function timer() {
     if (timing < 0) {
       clearInterval(refreshIntervalId);
     }
+    if (timeEnding === true) {
+    clearInterval(refreshIntervalId);
+  }
     document.querySelector("#timer > span").textContent = timing--;
   }, 1000);
 }
