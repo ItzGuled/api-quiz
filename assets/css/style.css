@@ -12,7 +12,7 @@ body {
 #start-btn {
   font-size: 23px;
   background-color: rgb(209, 223, 223);
-  border-color: white;
+  border-color: rgb(6, 34, 197);
   color: #0832ec;
   bottom: 20%;
   display: flex;
@@ -20,6 +20,8 @@ body {
   align-items: center;
   margin: 0 auto;
   display: block;
+
+  border-radius: 16px;
 }
 
 .hide {
@@ -47,8 +49,12 @@ ol {
 }
 
 #results {
-    text-align: center;
-    overflow: hidden;
-  }
+  text-align: center;
+  overflow: hidden;
+}
 
-
+#names {
+  margin: auto;
+  display: block;
+  text-align: center;
+}
