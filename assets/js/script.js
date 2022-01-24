@@ -9,6 +9,10 @@ var score = 0;
 var timing = 75;
 var clear = undefined;
 var clickEl = document.getElementById("click");
+var timeEnding = false;
+var timers = document.getElementById("timer");
+
+var names = document.getElementById("names");
 
 startButton.addEventListener("click", startQuiz);
 
@@ -39,17 +43,17 @@ var questions = [
     correctAnswer: "Quentin Tarantino",
   },
   {
-    question: "How much Oscars does Robert Deniro have?",
+    question: "How many Oscars does Robert Deniro have?",
     answers: ["1", "2", "3", "4"],
     correctAnswer: "4",
   },
   {
-    question: "Who is the Darth Vaders master?",
+    question: "Who is Darth Vader's master?",
     answers: ["General Grievous", "Yoda", "Palpatine", "Obi Wan"],
     correctAnswer: "Palpatine",
   },
   {
-    question: "Which Star Wars Movie is the best(This is not subjective)?",
+    question: "Which Star Wars Movie is the best? (This is not subjective)",
     answers: [
       "Empire Strikes Back",
       "Revenge of the Sith",
@@ -63,8 +67,6 @@ var questions = [
 function displayQuestion() {
   if (indexQuestion >= questions.length) {
     ending();
-
-    
   } else {
     var answerClick = document.getElementById("answer-click");
     var question = document.getElementById("question");
@@ -83,8 +85,6 @@ function displayQuestion() {
       i++;
     }
     question.textContent = questions[indexQuestion].question;
-
-    
   }
 }
 
@@ -94,7 +94,6 @@ function evaluateAndIncrement(event) {
   if (questions[indexQuestion].correctAnswer === event.target.innerHTML) {
     console.log("answered-correctly");
     score++;
-
 
     clickEl.textContent = "CORRECT!";
     console.log("answered-correctly");
@@ -109,20 +108,19 @@ function evaluateAndIncrement(event) {
   setTimeout(function () {
     clickEl.setAttribute("class", "click hide");
   }, 1500);
-  //adding fade out effect css
 
-
-  
   indexQuestion++;
   displayQuestion();
 }
-let timeEnding = false
+
 function ending() {
   questionContainerEl.classList.add("hide");
-  timeEnding = true
+  timeEnding = true;
   results.classList.remove("hide");
+  names.classList.remove("hide");
   var scoreTotal = document.createElement("p");
-  scoreTotal.textContent = document.querySelector("#timer > span").textContent
+  scoreTotal.textContent = document.querySelector("#timer > span").textContent;
+  timers.remove();
   results.appendChild(scoreTotal);
 }
 function timer() {
@@ -132,11 +130,11 @@ function timer() {
   console.log("timer element", timerValue);
   clear = setInterval(function () {
     if (timing < 0) {
-      clearInterval(refreshIntervalId);
+      clearInterval(refreshInterval);
     }
     if (timeEnding === true) {
-    clearInterval(refreshIntervalId);
-  }
+      clearInterval(refreshInterval);
+    }
     document.querySelector("#timer > span").textContent = timing--;
   }, 1000);
 }
